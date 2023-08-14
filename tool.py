@@ -102,8 +102,7 @@ def handle_photo():
     date_list = []
     for i in range(len(file_list)):
         filename = file_list[i]
-        date_str, info = filename.split("_")
-        info, _ = info.split(".")
+        date_str, info, seq_and_suffix = filename.split("_")
         date = datetime.strptime(date_str, "%Y-%m-%d")
         year_month = '-'.join(date_str.split('-')[0:2])
         if i == 0:  # 处理第一个文件
